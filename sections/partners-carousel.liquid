@@ -1,0 +1,418 @@
+<section
+  class="partners-carousel-{{ section.id }}"
+  data-section="{{ section.id }}"
+>
+  {{ 'owl.carousel.min.css' | asset_url | stylesheet_tag }}
+  {{ 'owl.theme.default.min.css' | asset_url | stylesheet_tag }}
+
+  {%- style -%}
+    .partners-carousel-{{ section.id }} {
+      width: 100%;
+
+      {%- if section.settings.display_on_mobile == false -%}
+        display: none;
+      {%- else -%}
+        display: block;
+      {%- endif -%}
+
+      {%- if section.settings.background_color != blank and section.settings.background_image == blank -%}
+        background-color: {{ section.settings.background_color }};
+      {%- endif -%}
+
+      {%- if section.settings.background_image != blank and section.settings.background_color == blank -%}
+        background: url('{{ section.settings.background_image | image_url }}') center/cover no-repeat border-box padding-box scroll;
+      {%- endif -%}
+
+      {%- if section.settings.background_color != blank and section.settings.background_image != blank -%}
+        background: {{ section.settings.background_color }} url('{{ section.settings.background_image | image_url }}') center/cover no-repeat border-box padding-box scroll;
+      {%- endif -%}
+
+      flex-flow: column nowrap;
+      justify-content: center;
+      align-items: center;
+
+      margin-top: {{ section.settings.mobile_margin_top }}px;
+      margin-right: {{ section.settings.mobile_margin_right }}px;
+      margin-bottom: {{ section.settings.mobile_margin_bottom }}px;
+      margin-left: {{ section.settings.mobile_margin_left }}px;
+
+      padding-top: {{ section.settings.mobile_padding_top }}px;
+      padding-right: {{ section.settings.mobile_padding_right }}px;
+      padding-bottom: {{ section.settings.mobile_padding_bottom }}px;
+      padding-left: {{ section.settings.mobile_padding_left }}px;
+    }
+
+    div.owl-carousel-{{ section.id }} .owl-dots.disabled, div.owl-carousel-{{ section.id }} .owl-nav.disabled {
+      display: block;
+    }
+
+    div.owl-carousel-{{ section.id }} .owl-dots button.owl-dot:not(.active) > span {
+      background: #EEC9A5 !important;
+    }
+
+    div.owl-carousel-{{ section.id }} .owl-dots button.owl-dot.active > span {
+      background: #38220F !important;
+    }
+
+    div.owl-carousel-{{ section.id }} div.owl-stage {
+      display: flex;
+      flex-flow: row;
+      justify-content: center;
+      align-items: center;
+    }
+
+    div.owl-carousel-{{ section.id }} div.owl-item {
+      height: 100%;
+    }
+
+    div.owl-carousel-{{ section.id }} div.owl-item > div {
+      
+      display: flex;
+      flex-flow: column wrap;
+      align-items: center;
+    }
+
+    div.owl-carousel-{{ section.id }} div.owl-item:not(.center) > div {
+      -webkit-transform: scale(0.8);
+      transform: scale(0.8);
+    }
+
+    div.owl-carousel-{{ section.id }} .owl-prev, .owl-next {
+      width: 5rem;
+      height: 5rem;
+      border-radius: 100% !important;
+      background: #000000 !important;
+      color: white !important;
+      opacity: 0.4 !important;
+      position: absolute;
+      top: 45%;
+      transform: translateY(-50%);
+      display: block !important;
+    }
+
+    div.owl-carousel-{{ section.id }} .owl-prev { left: -10px; }
+    div.owl-carousel-{{ section.id }} .owl-next { right: -10px; }
+    div.owl-carousel-{{ section.id }} .owl-nav [class*=owl-]:hover {
+      background: initial;
+      color: initial;
+      text-decoration: none;
+    }
+
+    @media screen and (min-width: 750px) {
+      .partners-carousel-{{ section.id }} {
+        {%- if section.settings.display_on_desktop == false -%}
+          display: none;
+        {%- else -%}
+          display: flex;
+        {%- endif -%}
+
+        margin-top: {{ section.settings.desktop_margin_top }}px;
+        margin-right: {{ section.settings.desktop_margin_right }}px;
+        margin-bottom: {{ section.settings.desktop_margin_bottom }}px;
+        margin-left: {{ section.settings.desktop_margin_left }}px;
+
+        padding-top: {{ section.settings.desktop_padding_top }}px;
+        padding-right: {{ section.settings.desktop_padding_right }}px;
+        padding-bottom: {{ section.settings.desktop_padding_bottom }}px;
+        padding-left: {{ section.settings.desktop_padding_left }}px;
+      }
+
+      div.owl-carousel-{{ section.id }} {
+        min-width: 80%;
+        width: 80%;
+        max-width: 80%;
+        margin: auto;
+      }
+
+      {% comment %} div.owl-carousel-{{ section.id }} .owl-nav.disabled { {% endcomment %}
+      {% comment %}   display: none; {% endcomment %}
+      {% comment %} } {% endcomment %}
+    }
+
+    @media screen and (min-width: 1600px) {
+      div.owl-carousel-{{ section.id }} {
+        min-width: 1400px;
+        width: 1400px;
+        max-width: 1400px;
+      }
+    }
+  {%- endstyle -%}
+
+  <div class="owl-carousel-{{ section.id }} owl-carousel owl-theme">
+    {%- for block in section.blocks -%}
+      {%- case block.type -%}
+        {%- when 'partners_carousel_item' -%}
+          <div {{ block.shopify_attributes }}>
+            <div class="owl-carousel__image">
+              <img
+                src="{{ block.settings.primary_image | image_url }}"
+                height=""
+                width=""
+                style="border-radius: {{ block.settings.primary_image_border_radius }}% !important"
+                loading="lazy"
+              >
+            </div>
+          </div>
+      {%- endcase -%}
+    {%- endfor -%}
+  </div>
+
+  {{ 'jquery-3.6.0.min.js' | asset_url | script_tag }}
+  {{ 'owl.carousel.min.js' | asset_url | script_tag }}
+
+  <script type="text/javascript">
+    (function ($) {
+      $(document).ready(function () {
+        const width = window.innerWidth > 0 ? window.innerWidth : screen.width;
+
+        $('div.owl-carousel-{{ section.id }}').owlCarousel({
+          items: 1,
+          center: false,
+          rtl: false,
+          nav: true,
+          dots: false,
+          loop: true,
+          autoplay: false,
+          autoplayTimeout: 5000,
+          autoplayHoverPause: true,
+          responsive: {
+            0: {
+              items: {{ section.settings.mobile_carousel_item }},
+            },
+            700: {
+              items: {{ section.settings.desktop_carousel_item }},
+            },
+            1000: {
+              items: {{ section.settings.desktop_carousel_item }},
+            },
+          },
+        });
+      });
+    })(jQuery);
+  </script>
+</section>
+
+{% schema %}
+{
+  "name": "Partners Carousel",
+  "tag": "section",
+  "class": "section",
+  "blocks": [
+    {
+      "type": "partners_carousel_item",
+      "name": "P. Carousel Item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "primary_image",
+          "label": "Primary Image"
+        },
+        {
+          "type": "header",
+          "content": "Device Independent Settings"
+        },
+        {
+          "type": "paragraph",
+          "content": "Settings below are device independent."
+        },
+        {
+          "type": "range",
+          "id": "primary_image_border_radius",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "%",
+          "label": "Primary Image Border Radius",
+          "default": 0
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "header",
+      "content": "Device Independent Settings"
+    },
+    {
+      "type": "paragraph",
+      "content": "Settings below are device independent."
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background Image"
+    },
+    {
+      "type": "header",
+      "content": "Mobile Specific Settings"
+    },
+    {
+      "type": "paragraph",
+      "content": "Settings below are mobile specific."
+    },
+    {
+      "type": "checkbox",
+      "id": "display_on_mobile",
+      "label": "Display On Mobile",
+      "default": true
+    },
+    {
+      "type": "number",
+      "id": "mobile_margin_top",
+      "label": "Margin Top",
+      "info": "The value is in pixels",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "mobile_margin_right",
+      "label": "Margin Right",
+      "info": "The value is in pixels",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "mobile_margin_bottom",
+      "label": "Margin Bottom",
+      "info": "The value is in pixels",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "mobile_margin_left",
+      "label": "Margin Left",
+      "info": "The value is in pixels",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "mobile_padding_top",
+      "label": "Padding Top",
+      "info": "The value is in pixels",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "mobile_padding_right",
+      "label": "Padding Right",
+      "info": "The value is in pixels",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "mobile_padding_bottom",
+      "label": "Padding Bottom",
+      "info": "The value is in pixels",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "mobile_padding_left",
+      "label": "Padding Left",
+      "info": "The value is in pixels",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "mobile_carousel_item",
+      "min": 1,
+      "max": 3,
+      "step": 1,
+      "unit": "ea.",
+      "label": "Carousel Items",
+      "default": 1
+    },
+    {
+      "type": "header",
+      "content": "Desktop Specific Settings"
+    },
+    {
+      "type": "paragraph",
+      "content": "Settings below are desktop specific."
+    },
+    {
+      "type": "checkbox",
+      "id": "display_on_desktop",
+      "label": "Display On Desktop",
+      "default": true
+    },
+    {
+      "type": "number",
+      "id": "desktop_margin_top",
+      "label": "Margin Top",
+      "info": "The value is in pixels",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "desktop_margin_right",
+      "label": "Margin Right",
+      "info": "The value is in pixels",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "desktop_margin_bottom",
+      "label": "Margin Bottom",
+      "info": "The value is in pixels",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "desktop_margin_left",
+      "label": "Margin Left",
+      "info": "The value is in pixels",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "desktop_padding_top",
+      "label": "Padding Top",
+      "info": "The value is in pixels",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "desktop_padding_right",
+      "label": "Padding Right",
+      "info": "The value is in pixels",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "desktop_padding_bottom",
+      "label": "Padding Bottom",
+      "info": "The value is in pixels",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "desktop_padding_left",
+      "label": "Padding Left",
+      "info": "The value is in pixels",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "desktop_carousel_item",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "unit": "ea.",
+      "label": "Carousel Items",
+      "default": 5
+    }
+  ],
+  "presets": [
+    {
+      "name": "Partners Carousel"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,324 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "rich_text_nMdzHm": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_E8agkE": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>O Nama<\/strong>",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "heading_E8agkE"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-fc678a87-d37b-40ef-9fe6-6f0871e0524d",
+        "full_width": true,
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    },
+    "image_banner_PifTzV": {
+      "type": "image-banner",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/about_us_1.png",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "desktop_content_position": "bottom-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": false
+      }
+    },
+    "rich_text_zqpeNT": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_ah7QBU": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Founder backstory:<\/strong>",
+            "heading_size": "h2"
+          }
+        },
+        "text_irMXcn": {
+          "type": "text",
+          "settings": {
+            "text": "<h5>Before founding Mushroom Cups in 2017, I (Stipe) was a professional basketball player and I played for the Croatian National Team for several years.  As a pro-athlete, my life focused on the quest for constant improvement.  Whether enhancing my strength, stamina, mental clarity, speed, or reflex response-- every slight improvement would help me on the court, where I'm competing with the best athletes from other countries and where a single point can determine the outcome from an entire season of effort.  <br\/><br\/>During that time, I became an expert in all forms of personal development and physical fitness, but it came at a price.  I was oftentimes a guinea pig trying new supplements, or diets, or exercise methods.<br\/><br\/>I'll save you the details, but I spent a lot of time detoxing and even needed surgery to reverse negative side effects from artificial supplements that I thought were going to help my body and mind.<\/h5>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_ah7QBU",
+        "text_irMXcn"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-fc678a87-d37b-40ef-9fe6-6f0871e0524d",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "image_banner_c4pfhe": {
+      "type": "image-banner",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/about_us_2.png",
+        "image_overlay_opacity": 0,
+        "image_height": "small",
+        "desktop_content_position": "middle-center",
+        "show_text_box": false,
+        "desktop_content_alignment": "center",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": false
+      }
+    },
+    "rich_text_nVqA3Y": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_kz7xfX": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Mushrooms part 1.<\/strong>",
+            "heading_size": "h2"
+          }
+        },
+        "text_imicFg": {
+          "type": "text",
+          "settings": {
+            "text": "<h5>Cordyceps mushroom was my first big discovery. I started using it the year we had the University Championship in Cordoba, Spain. I can still remember the feeling. I was so energetic and relentless my opponents couldn't get my breath away from their necks no matter what they did. <br\/><br\/>We were considered complete outsiders, but we got all the way to the finals and won the silver medal. It was a success nobody was hoping for. It was so surprising that we actually had to reschedule our airline tickets to go back home because our Basketball Association assumed we would not get even remotely that far so they booked our flight back, 2 days before the finals. <br\/><br\/>Mushrooms became part of my daily life, my basketball career was on a good track, and my family was there for me as always.<br\/><br\/>But while my focus was aimed in another direction I failed to notice my family also needed me. They were hiding things from me until the situation became desperate. <br\/><br\/>My father who worked in the chemical industry developed a rare form of allergy which made skin on his feet crack all the way to the blood. It looked like the dry desert soil, and you could literally see the blood through the cracks. His feet would often start bleeding just by walking. <br\/>But bleeding wasn’t the scary part. <br\/><br\/>The scary part was accompanying arrhythmia and devastatingly unstable blood pressure which made him a ticking time bomb. He was on the edge of dying at least once a week. <br\/>Diets, medicine, this doctor that doctor, we tried everything. Months were passing but the situation wasn’t getting any better. <br\/><br\/>And as months were passing I became obsessed with helping him.  I dug myself in the scientific literature trying to find a shred of hope.<\/h5>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_kz7xfX",
+        "text_imicFg"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-fc678a87-d37b-40ef-9fe6-6f0871e0524d",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "image_banner_Lg7mzQ": {
+      "type": "image-banner",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/about_us_3.png",
+        "image_overlay_opacity": 0,
+        "image_height": "small",
+        "desktop_content_position": "middle-center",
+        "show_text_box": false,
+        "desktop_content_alignment": "center",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": false
+      }
+    },
+    "rich_text_6c3eR8": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_CYkmXV": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Mushrooms part 2.<\/strong>",
+            "heading_size": "h2"
+          }
+        },
+        "text_3EPJ6Q": {
+          "type": "text",
+          "settings": {
+            "text": "<h5>Did you know that out of 20 different medicines that saved the human race in the 20th century, 10 utilizes different kinds of mushrooms? I surely didn’t, but when I discovered it, it reminded me of my experience with Cordyceps and my gut was telling me I should explore it. <br\/><br\/>Feeding my sick father with mushrooms wasn’t something I was confident doing, so I looked for help and validation everywhere I could. <br\/><br\/>It didn’t start as I was hoping for. Using mushrooms anywhere other than on Pizza gets you laughed at quite fast. Even one of my childhood friends made fun of me behind my back and on one occasion he pulled his feet out and told me he has some fungus there so maybe I can use it to cure AIDS. <br\/><br\/>But it didn’t take me long to discover a whole community of people with impressive references and critical minds who considered this a valid option. They shared their personal mushroom success stories which gave me courage to give it a shoot. With a lot of help, I managed to make one jar of home-made mushroom extract mix! <\/h5>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_CYkmXV",
+        "text_3EPJ6Q"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-fc678a87-d37b-40ef-9fe6-6f0871e0524d",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "rich_text_LgzLqd": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_UFD9KH": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>MUSHROOM EXTRACT:<\/strong>",
+            "heading_size": "h2"
+          }
+        },
+        "text_LptHNC": {
+          "type": "text",
+          "settings": {
+            "text": "<h5>After so many attempts from the people way more skilled and knowledgeable than me, my father wasn’t very optimistic to take my medicine. After a couple of days, jar looked unopened. <br\/><br\/>When I confronted him about it he disinterestedly responded he forgot to take it.<br\/>All the effort just to be discarded without even trying it. I was mad.<br\/>He never forgets what time the soccer games are or to drink his coffee, which by the way all doctors advised against because each cup could mean another arrhythmia attack. Impulsively I took the mushroom mix,  poured it into the coffee jar and mixed it all together. <br\/><br\/><strong>There, now you won’t forget it, I said angrily. <\/strong><\/h5>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_UFD9KH",
+        "text_LptHNC"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "multicolumn_rBmKya": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_EwEAU3": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/about_us_4.png",
+            "title": "",
+            "text": "<h5>I took my phone, turned on the camera took a picture of his feet, and told him we’ll do this again in 60 days. <\/h5>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_4gWPaB": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/about_us_5.png",
+            "title": "",
+            "text": "<h5>We didn’t have to wait that long. This were his legs after 30 days. <\/h5>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_EwEAU3",
+        "column_4gWPaB"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "half",
+        "image_ratio": "square",
+        "columns_desktop": 2,
+        "column_alignment": "center",
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "scheme-fc678a87-d37b-40ef-9fe6-6f0871e0524d",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 12,
+        "padding_bottom": 36
+      }
+    },
+    "multirow_QERQbD": {
+      "type": "multirow",
+      "blocks": {
+        "row_pNnELE": {
+          "type": "row",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/about_us_6.png",
+            "caption": "",
+            "heading": "",
+            "text": "<h5>My Father was doing better, unbelievably better! Cup by cup his body was healing and disease was fading.<br\/><br\/>It has been 6 years. My father is 70 and he acts like he is 50. He likes to use all of this extra energy he has now, to complain about politics and his soccer team. <br\/><br\/>He won a ballot tournament recently!-<strong> the same guy who couldn’t even walk without bleeding. <\/strong><br\/><br\/>He loves Mushroom Cups coffee and every time he gets low on his stash he calls me a cheap asshole who skimps on his own father. <br\/>In my book this is the score:<br\/>Mushrooms 2 : artificial supplements 0<\/h5>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "row_Chy3tD": {
+          "type": "row",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/about_us_7.png",
+            "caption": "",
+            "heading": "<strong>Mushroom Cups<\/strong>",
+            "text": "<h5>I finished my basketball career and partnered up with dozens of scientists and independent mushroom hunters and started a business named Mushroom Cups. <br\/><br\/>We infuse beverages with Wild Chanterelle,  and organic - Cordyceps, Lion’s Mane and Chaga. <br\/>Recently we were <strong>chosen as 1 in 8 of the most promising food tech startups<\/strong> in the world and we have happy customers all around the world. <br\/><br\/>Our signature beverage? Yes, you guessed it -  mushroom-infused coffee. <\/h5>",
+            "button_label": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "row_pNnELE",
+        "row_Chy3tD"
+      ],
+      "settings": {
+        "image_height": "medium",
+        "desktop_image_width": "medium",
+        "heading_size": "h2",
+        "text_style": "body",
+        "button_style": "secondary",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "image_layout": "alternate-left",
+        "section_color_scheme": "scheme-70020ab2-fc0e-4b5e-881b-4864cf084227",
+        "row_color_scheme": "scheme-fc678a87-d37b-40ef-9fe6-6f0871e0524d",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_banner_9hFLXd": {
+      "type": "image-banner",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/banner_img_performance.png",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "desktop_content_position": "middle-center",
+        "show_text_box": false,
+        "desktop_content_alignment": "center",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_nMdzHm",
+    "image_banner_PifTzV",
+    "rich_text_zqpeNT",
+    "image_banner_c4pfhe",
+    "rich_text_nVqA3Y",
+    "image_banner_Lg7mzQ",
+    "rich_text_6c3eR8",
+    "rich_text_LgzLqd",
+    "multicolumn_rBmKya",
+    "multirow_QERQbD",
+    "image_banner_9hFLXd"
+  ]
+}

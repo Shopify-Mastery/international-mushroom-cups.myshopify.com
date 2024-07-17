@@ -1,0 +1,183 @@
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "disabled": true,
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "scheme-1"
+      }
+    },
+    "rich_text_amD3Bb": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_rDKymM": {
+          "type": "heading",
+          "settings": {
+            "heading": "Proizvodi",
+            "heading_size": "h1"
+          }
+        },
+        "text_nCjT4E": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Ugrabite dugotrajnu energiju iz naše organske kave koja je nježna prema želucu i ima okus baš kao organska Arabica kava.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_rDKymM",
+        "text_nCjT4E"
+      ],
+      "custom_css": [
+        "h2 {margin-top: 0px; margin-bottom: 10px; font-family: Nunito; font-weight: 900; font-size: 50px; line-height: 52px; color: rgb(56, 34, 15);}",
+        "p {font-family: Nunito; font-weight: 600; font-size: 18px; line-height: 28px; color: rgb(56, 34, 15); margin-top: 0px; margin-bottom: 0px;}"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-2047086b-4227-493b-a9a6-11a4ed9050a7",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 8
+      }
+    },
+    "multicolumn_kbUPaa": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_J4hb8G": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/novi-04_3.webp",
+            "title": "Čista energija",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_UmLJpL": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Frame_122.webp",
+            "title": "Gluten free",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_Pi6UmH": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Frame_122.webp",
+            "title": "Gluten free",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_J4hb8G",
+        "column_UmLJpL",
+        "column_Pi6UmH"
+      ],
+      "custom_css": [
+        "ul.grid {justify-content: center; align-items: center;}",
+        "li.multicolumn-list__item {max-width: 25rem;}",
+        "div.multicolumn-card.content-container {max-width: 25rem; background: rgb(var(--color-background)); padding: 25px; border-style: solid; border-color: rgb(131, 80, 46); border-width: 1px; border-radius: 20px;}",
+        "div.multicolumn-card__info {padding: 0;}",
+        "div.multicolumn-card-spacing {padding-top: 0;}",
+        "h3.inline-richtext {font-family: Nunito; font-weight: 900; font-size: 13px; line-height: 15px; color: rgb(131, 80, 46);}"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "center",
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "scheme-2047086b-4227-493b-a9a6-11a4ed9050a7",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 8,
+        "padding_bottom": 36
+      }
+    },
+    "collection_list_nphE4U": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_CPYAtw": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "1"
+          }
+        },
+        "featured_collection_kQ7fc6": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "1"
+          }
+        },
+        "featured_collection_8P4tdK": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "1"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_CPYAtw",
+        "featured_collection_kQ7fc6",
+        "featured_collection_8P4tdK"
+      ],
+      "disabled": true,
+      "custom_css": [
+        "h3.card__heading {text-align: center; font-family: Nunito; font-weight: 900; font-size: 20px; line-height: 28px; color: rgb(56, 34, 15); margin-top: 0px; margin-bottom: 0px;}",
+        "span.icon-wrap {display: none;}"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h2",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "color_scheme": "scheme-2047086b-4227-493b-a9a6-11a4ed9050a7",
+        "show_view_all": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 8,
+        "padding_bottom": 36
+      }
+    },
+    "main_collection_custom_product_grid_cpg9TQ": {
+      "type": "main-collection-custom-product-grid",
+      "settings": {
+        "products_per_page": 16,
+        "columns_desktop": 3,
+        "color_scheme": "scheme-2047086b-4227-493b-a9a6-11a4ed9050a7",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": true,
+        "enable_filtering": true,
+        "filter_type": "horizontal",
+        "enable_sorting": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "rich_text_amD3Bb",
+    "multicolumn_kbUPaa",
+    "collection_list_nphE4U",
+    "main_collection_custom_product_grid_cpg9TQ"
+  ]
+}

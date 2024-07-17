@@ -1,0 +1,325 @@
+variant-selects {
+  display: block;
+}
+
+.product--no-media .product-form__input--pill,
+.product--no-media .product-form__input--swatch,
+.product--no-media .product-form__input--dropdown {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.product--no-media .product-form__input.product-form__input--pill,
+.product--no-media .product-form__input.product-form__input--swatch {
+  flex-wrap: wrap;
+  margin: 0 auto 1.2rem auto;
+}
+
+.product--no-media .product-form__input--dropdown {
+  flex-direction: column;
+  max-width: 100%;
+}
+
+:is(.product-form__input--pill, .product-form__input--swatch) .form__label {
+  margin-bottom: 0.2rem;
+}
+
+.product-form__input input[type='radio'] {
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden;
+  position: absolute;
+  height: 1px;
+  width: 1px;
+}
+
+.product-form__input
+  input[type='radio']:not(.disabled)
+  + label
+  > .label-unavailable {
+  display: none;
+}
+
+.product-form__input--dropdown {
+  --swatch-input--size: 2rem;
+  margin-bottom: 1.6rem;
+}
+
+.product-form__input--dropdown .dropdown-swatch + select {
+  padding-left: calc(2.4rem + var(--swatch-input--size));
+}
+
+.product-form__input--dropdown .dropdown-swatch {
+  position: absolute;
+  left: 1.6rem;
+  top: calc(50% - var(--swatch-input--size) / 2);
+  width: var(--swatch-input--size);
+  height: var(--swatch-input--size);
+  z-index: 1;
+}
+
+/* Custom styles for Pill display type */
+.product-form__input--pill input[type='radio'] + label {
+  width: 32%;
+  border: 1px solid #83502e;
+  background-color: transparent;
+  color: rgba(var(--color-foreground));
+  border-radius: 2rem;
+  color: #83502e;
+  display: inline-block;
+  padding: 2rem 1rem;
+  font-size: 1.4rem;
+  letter-spacing: 0.1rem;
+  line-height: 1;
+  text-align: center;
+  transition: border var(--duration-short) ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.product-form__input--pill
+  input[type='radio']:not(:checked)
+  + label
+  .product-variation__option-value {
+  color: #512b09;
+}
+
+.product-form__input--pill
+  input[type='radio']
+  + label
+  .product-variation__option-value {
+  font-family: Nunito;
+  /* font-size: 28px; */
+  font-size: 16px;
+  font-weight: 900;
+  line-height: 34px;
+  letter-spacing: -1px;
+  text-align: center;
+}
+
+.product-form__input--pill
+  input[type='radio']:not(:checked)
+  + label
+  .product-variation__option-metafield-text {
+  color: #83502e;
+}
+
+.product-form__input--pill
+  input[type='radio']
+  + label
+  .product-variation__option-metafield-text {
+  font-family: Nunito;
+  font-size: 12px;
+  font-weight: 900;
+  line-height: 15px;
+  text-align: center;
+}
+
+.product-form__input--pill
+  input[type='radio']:not(:checked)
+  + label
+  .product-variation__option-metafield-subtext {
+  color: #83502e;
+}
+
+.product-form__input--pill
+  input[type='radio']
+  + label
+  .product-variation__option-metafield-subtext {
+  font-family: Nunito;
+  font-size: 8px;
+  font-weight: normal;
+  line-height: 15px;
+  text-align: center;
+}
+
+@media screen and (min-width: 375px) {
+  .product-form__input--pill
+    input[type='radio']
+    + label
+    .product-variation__option-metafield-text {
+    font-size: 12px;
+  }
+
+  .product-form__input--pill
+    input[type='radio']
+    + label
+    .product-variation__option-metafield-subtext {
+    font-size: 11px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .product-form__input--pill
+    input[type='radio']
+    + label
+    .product-variation__option-value {
+    font-size: 28px;
+  }
+
+  .product-form__input--pill
+    input[type='radio']
+    + label
+    .product-variation__option-metafield-text {
+    font-size: 1.6rem;
+  }
+
+  .product-form__input--pill
+    input[type='radio']
+    + label
+    .product-variation__option-metafield-subtext {
+    font-size: 1.4rem;
+  }
+
+  .product-form__input--pill input[type='radio'] + label .price-item--regular {
+    font-size: 1.7rem !important;
+  }
+
+  .product-form__input--pill input[type='radio'] + label .price-item--sale {
+    font-size: 1.7rem !important;
+  }
+
+  .product-form__input--pill input[type='radio'] + label .savings span {
+    font-size: 1.7rem !important;
+    padding: 0.5rem !important;
+    margin-top: 1rem;
+  }
+}
+
+.product-form__input--pill input[type='radio'] + label hr {
+  margin: 1rem 1rem;
+  background-color: #eed0a5;
+}
+
+.product-form__input--pill
+  input[type='radio']:not(:checked)
+  + label
+  .price-item--regular {
+  color: #512b09;
+}
+
+.product-form__input--pill input[type='radio'] + label .price-item--regular {
+  font-family: Nunito;
+  font-size: 14px;
+  font-weight: 900;
+  line-height: 24px;
+  text-align: center;
+}
+
+.product-form__input--pill
+  input[type='radio']:not(:checked)
+  + label
+  .price-item--sale {
+  color: #512b09;
+}
+
+.product-form__input--pill input[type='radio'] + label .price-item--sale {
+  font-family: Nunito;
+  font-size: 14px;
+  font-weight: 900;
+  line-height: 24px;
+  text-align: center;
+}
+
+.product-form__input--pill input[type='radio'] + label .savings span {
+  display: inline-block;
+  padding: 0.2rem;
+  gap: 8px;
+  border-radius: 1rem;
+  border: 1px 0px 0px 0px;
+  opacity: 0px;
+  color: #83502e;
+  background-color: #eed0a5;
+  border: 1px solid #eed0a5;
+}
+
+.product-form__input--pill input[type='radio'] + label:before {
+  content: '';
+  position: absolute;
+  top: calc(var(--variant-pills-border-width) * -1);
+  right: calc(var(--variant-pills-border-width) * -1);
+  bottom: calc(var(--variant-pills-border-width) * -1);
+  left: calc(var(--variant-pills-border-width) * -1);
+  z-index: -1;
+  border-radius: var(--variant-pills-radius);
+  box-shadow: var(--variant-pills-shadow-horizontal-offset)
+    var(--variant-pills-shadow-vertical-offset)
+    var(--variant-pills-shadow-blur-radius)
+    rgba(var(--color-shadow), var(--variant-pills-shadow-opacity));
+}
+
+.product-form__input--pill input[type='radio'] + label:hover {
+  border-color: rgb(var(--color-foreground));
+}
+
+.product-form__input--pill input[type='radio']:checked + label {
+  background-color: #83502e;
+  border: 1px solid #f9e9c8;
+  color: #f9f5ec;
+}
+
+@media screen and (forced-colors: active) {
+  .product-form__input--pill input[type='radio']:checked + label {
+    text-decoration: underline;
+  }
+
+  .product-form__input--pill input[type='radio']:focus-visible + label {
+    outline: transparent solid 1px;
+    outline-offset: 2px;
+  }
+}
+
+.product-form__input--pill input[type='radio']:checked + label::selection {
+  background-color: rgba(var(--color-background), 0.3);
+}
+
+.product-form__input--pill input[type='radio']:disabled + label,
+.product-form__input--pill input[type='radio'].disabled + label {
+  border-color: rgba(var(--color-foreground), 0.1);
+  color: rgba(var(--color-foreground), 0.6);
+  text-decoration: line-through;
+}
+
+.product-form__input--pill input[type='radio'].disabled:checked + label,
+.product-form__input--pill input[type='radio']:disabled:checked + label {
+  color: rgba(var(--color-background), 0.6);
+}
+.product-form__input--pill input[type='radio']:focus-visible + label {
+  box-shadow:
+    0 0 0 0.3rem rgb(var(--color-background)),
+    0 0 0 0.5rem rgba(var(--color-foreground), 0.55);
+}
+
+/* Fallback */
+.product-form__input--pill input[type='radio'].focused + label {
+  box-shadow:
+    0 0 0 0.3rem rgb(var(--color-background)),
+    0 0 0 0.5rem rgba(var(--color-foreground), 0.55);
+}
+
+/* No outline when focus-visible is available in the browser */
+.no-js
+  .product-form__input--pill
+  input[type='radio']:focus:not(:focus-visible)
+  + label {
+  box-shadow: none;
+}
+/* End custom styles for Pill display type  */
+
+/* Custom styles for Swatch display type */
+.product-form__input--swatch {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.product-form__input--swatch .swatch-input__input + .swatch-input__label {
+  margin: 0.7rem 1.2rem 0.2rem 0;
+}
+
+@media screen and (min-width: 750px) {
+  .product-form__input--swatch .swatch-input__input + .swatch-input__label {
+    --swatch-input--size: 2.8rem;
+  }
+}
+/* End custom styles for Swatch display type */

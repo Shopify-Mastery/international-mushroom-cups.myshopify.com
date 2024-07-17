@@ -1,0 +1,1034 @@
+<section
+  id="CustomContainerWithCenteredContent-{{ section.id }}"
+  class="section-{{ section.id }}-padding"
+  data-section="{{ section.id }}"
+>
+  <section class="custom-container-with-centered-content-{{ section.id }}">
+    {{ 'component-custom-accordion.css' | asset_url | stylesheet_tag }}
+    {%- style -%}
+      .section-{{ section.id }}-padding {
+        {%- if section.settings.background_color != blank and section.settings.background_image == blank -%}
+          background-color: {{ section.settings.background_color }};
+        {%- endif -%}
+
+        {%- if section.settings.background_image != blank and section.settings.background_color == blank -%}
+          background: url('{{ section.settings.background_image | image_url }}') center/cover no-repeat border-box padding-box scroll;
+        {%- endif -%}
+
+        {%- if section.settings.background_color != blank and section.settings.background_image != blank -%}
+          background: {{ section.settings.background_color }} url('{{ section.settings.background_image | image_url }}') center/cover no-repeat border-box padding-box scroll;
+        {%- endif -%}
+      }
+
+      .custom-container-with-centered-content-{{ section.id }} {
+        {% comment %} min-width: 90%; {% endcomment %}
+        {% comment %} width: 90%; {% endcomment %}
+        {% comment %} max-width: 90%; {% endcomment %}
+
+        {%- if section.settings.display_on_mobile == false -%}
+          display: none;
+        {%- else -%}
+          display: flex;
+        {%- endif -%}
+
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+
+        margin: 0 auto;
+        margin-top: {{ section.settings.mobile_margin_top }}px;
+        {% comment %} margin-right: {{ section.settings.mobile_margin_right }}px; {% endcomment %}
+        margin-bottom: {{ section.settings.mobile_margin_bottom }}px;
+        {% comment %} margin-left: {{ section.settings.mobile_margin_left }}px; {% endcomment %}
+
+        padding-top: {{ section.settings.mobile_padding_top }}px;
+        {% comment %} padding-right: {{ section.settings.mobile_padding_right }}px; {% endcomment %}
+        padding-bottom: {{ section.settings.mobile_padding_bottom }}px;
+        {% comment %} padding-left: {{ section.settings.mobile_padding_left }}px; {% endcomment %}
+      }
+
+      @media screen and (min-width: 750px) {
+        .custom-container-with-centered-content-{{ section.id }} {
+          {% comment %} min-width: 100%; {% endcomment %}
+          {% comment %} width: 100%; {% endcomment %}
+          {% comment %} max-width: 100%; {% endcomment %}
+
+          {%- if section.settings.display_on_desktop == false -%}
+            display: none;
+          {%- else -%}
+            display: flex;
+          {%- endif -%}
+
+          margin: 0 auto;
+          margin-top: {{ section.settings.desktop_margin_top }}px;
+          {% comment %} margin-right: {{ section.settings.desktop_margin_right }}px; {% endcomment %}
+          margin-bottom: {{ section.settings.desktop_margin_bottom }}px;
+          {% comment %} margin-left: {{ section.settings.desktop_margin_left }}px; {% endcomment %}
+
+          padding-top: {{ section.settings.desktop_padding_top }}px;
+          {% comment %} padding-right: {{ section.settings.desktop_padding_right }}px; {% endcomment %}
+          padding-bottom: {{ section.settings.desktop_padding_bottom }}px;
+          {% comment %} padding-left: {{ section.settings.desktop_padding_left }}px; {% endcomment %}
+        }
+      }
+
+      @media screen and (min-width: 1600px) {
+        .custom-container-with-centered-content-{{ section.id }} {
+          {% comment %} min-width: 1400px; {% endcomment %}
+          {% comment %} width: 1400px; {% endcomment %}
+          {% comment %} max-width: 1400px; {% endcomment %}
+        }
+      }
+    {%- endstyle -%}
+
+    {%- for block in section.blocks -%}
+      {%- case block.type -%}
+        {%- when '@app' -%}
+          {% render block %}
+        {%- when 'custom_richtext_title' -%}
+          <section class="custom-richtext-title__container-{{ block.id }}" {{ block.shopify_attributes }}>
+            {%-
+              render 'custom-richtext-title',
+              block: block,
+            -%}
+          </section>
+        {%- when 'custom_image' -%}
+          <section class="custom-image__container-{{ block.id }}" {{ block.shopify_attributes }}>
+            {%-
+              render 'custom-image',
+              block: block,
+            -%}
+          </section>
+        {%- when 'custom_collapsible_row' -%}
+          <div class="product__accordion custom-accordion quick-add-hidden" {{ block.shopify_attributes }}>
+            <details
+              id="Details-{{ block.id }}-{{ section.id }}"
+              {% if block.settings.expanded_by_default %}
+                open
+              {% endif %}
+            >
+              <summary
+                {% if block.settings.expanded_by_default %}
+                  aria-expanded="true"
+                {% endif %}
+              >
+                <div class="summary__title">
+                  <h2 class="h4 accordion__title" style="{%- if block.settings.heading_color != blank -%}color: {{ block.settings.heading_color }};{%- endif -%}">
+                    {{ block.settings.heading | default: block.settings.page.title }}
+                  </h2>
+                </div>
+                {% render 'icon-caret-2' %}
+              </summary>
+              <div class="accordion__content rte" id="ProductAccordion-{{ block.id }}-{{ section.id }}">
+                {{ block.settings.richtext_content }}
+                {{ block.settings.page.content }}
+              </div>
+              {%- if block.settings.readmore_link != blank -%}
+                <div class="more-less">
+                  <a style="color: #71A8DA;" href="{{ block.settings.readmore_link }}" class="read-more">Lees Meer</a>
+                </div>
+              {%- endif -%}
+            </details>
+          </div>
+        {%- when 'custom_mobile_blockquote' -%}
+          <style>
+            .custom-mobile-blockquote__container-{{ block.id }} {
+              margin-top: 3rem;
+              min-width: 90%;
+              width: 90%;
+              max-width: 90%;
+              height: 15rem;
+              max-height: 15rem;
+
+              {%- if block.settings.background_color != blank -%}
+                background-image: {{ block.settings.background_color }};
+              {%- endif -%}
+
+              {%- if block.settings.background_image != blank -%}
+                background: url('{{ block.settings.background_image | image_url }}') center/cover no-repeat border-box padding-box scroll;
+              {%- endif -%}
+
+              display: flex;
+              flex-flow: column nowrap;
+              justify-content: center;
+              align-items: center;
+
+              border-radius: {{ block.settings.border_radius }}px;
+            }
+
+            .custom-mobile-blockquote__container-{{ block.id }} > p, .custom-mobile-blockquote__container-{{ block.id }} > ul {
+              margin: 0;
+              font-family: 'Raleway';
+              font-style: normal;
+              font-weight: 700;
+              font-size: 24px;
+              line-height: 24px;
+              text-align: center;
+
+              color: #1D1D1D;
+            }
+
+            @media screen and (min-width: 750px) {
+              .custom-mobile-blockquote__container-{{ block.id }} {
+                display: none;
+              }
+            }
+          </style>
+          <section class="custom-mobile-blockquote__container-{{ block.id }}" {{ block.shopify_attributes }}>
+            {{ block.settings.text }}
+          </section>
+      {%- endcase -%}
+    {%- endfor -%}
+  </section>
+</section>
+
+{% schema %}
+{
+  "name": "Centered Content Cont.",
+  "tag": "section",
+  "class": "section",
+  "blocks": [
+    {
+      "type": "@app"
+    },
+    {
+      "type": "custom_richtext_title",
+      "name": "Custom Richtext Title",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "default": "<p>Text goes here</p>",
+          "label": "Text"
+        },
+        {
+          "type": "header",
+          "content": "Device Independent Settings"
+        },
+        {
+          "type": "paragraph",
+          "content": "Settings below are device independent."
+        },
+        {
+          "type": "font_picker",
+          "id": "font",
+          "default": "raleway_n4",
+          "label": "Font Family"
+        },
+        {
+          "type": "color",
+          "id": "color",
+          "label": "Color",
+          "default": "#000000"
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_animation_effect",
+          "label": "Enable Animation Effect",
+          "default": false
+        },
+        {
+          "type": "select",
+          "id": "animation_direction",
+          "label": "Animation Direction",
+          "options": [
+            {
+              "value": "ttb",
+              "label": "Top To Bottom"
+            },
+            {
+              "value": "rtl",
+              "label": "Right To Left"
+            },
+            {
+              "value": "btt",
+              "label": "Bottom To Top"
+            },
+            {
+              "value": "ltr",
+              "label": "Left To Right"
+            }
+          ],
+          "default": "ltr"
+        },
+        {
+          "type": "number",
+          "id": "animation_duration",
+          "label": "Animation Duration",
+          "info": "The value is in seconds. It defines how long an animation should take to complete one cycle",
+          "default": 1
+        },
+        {
+          "type": "select",
+          "id": "timing_function",
+          "label": "Timing Function",
+          "options": [
+            {
+              "value": "ease",
+              "label": "Ease"
+            },
+            {
+              "value": "ease-in",
+              "label": "Ease In"
+            },
+            {
+              "value": "ease-out",
+              "label": "Ease Out"
+            },
+            {
+              "value": "ease-in-out",
+              "label": "Ease In Out"
+            },
+            {
+              "value": "linear",
+              "label": "Linear"
+            }
+          ],
+          "default": "ease"
+        },
+        {
+          "type": "number",
+          "id": "animation_delay",
+          "label": "Animation Delay",
+          "info": "The value is in seconds. It specifies a delay for the start of an animation",
+          "default": 0
+        },
+        {
+          "type": "header",
+          "content": "Mobile Specific Settings"
+        },
+        {
+          "type": "paragraph",
+          "content": "Settings below are mobile specific."
+        },
+        {
+          "type": "checkbox",
+          "id": "display_on_mobile",
+          "label": "Display On Mobile",
+          "default": true
+        },
+        {
+          "type": "number",
+          "id": "mobile_margin_top",
+          "label": "Margin Top",
+          "info": "The value is in pixels",
+          "default": 0
+        },
+        {
+          "type": "number",
+          "id": "mobile_margin_right",
+          "label": "Margin Right",
+          "info": "The value is in pixels",
+          "default": 0
+        },
+        {
+          "type": "number",
+          "id": "mobile_margin_bottom",
+          "label": "Margin Bottom",
+          "info": "The value is in pixels",
+          "default": 0
+        },
+        {
+          "type": "number",
+          "id": "mobile_margin_left",
+          "label": "Margin Left",
+          "info": "The value is in pixels",
+          "default": 0
+        },
+        {
+          "type": "number",
+          "id": "mobile_padding_top",
+          "label": "Padding Top",
+          "info": "The value is in pixels",
+          "default": 0
+        },
+        {
+          "type": "number",
+          "id": "mobile_padding_right",
+          "label": "Padding Right",
+          "info": "The value is in pixels",
+          "default": 0
+        },
+        {
+          "type": "number",
+          "id": "mobile_padding_bottom",
+          "label": "Padding Bottom",
+          "info": "The value is in pixels",
+          "default": 0
+        },
+        {
+          "type": "number",
+          "id": "mobile_padding_left",
+          "label": "Padding Left",
+          "info": "The value is in pixels",
+          "default": 0
+        },
+        {
+          "type": "number",
+          "id": "mobile_font_size",
+          "label": "Font Size",
+          "info": "The value is in pixels",
+          "default": 16
+        },
+        {
+          "type": "number",
+          "id": "mobile_line_height",
+          "label": "Line Height",
+          "info": "The value is in pixels. Recommended line height value is 1.5 times the font size",
+          "default": 24
+        },
+        {
+          "type": "number",
+          "id": "mobile_letter_spacing",
+          "label": "Letter Spacing",
+          "info": "Recommended letter spacing value is 0px. Accepts negative value!",
+          "default": 0
+        },
+        {
+          "type": "select",
+          "id": "mobile_text_alignment",
+          "label": "Text Alignment",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "center",
+              "label": "Center"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ],
+          "default": "left"
+        },
+        {
+          "type": "header",
+          "content": "Desktop Specific Settings"
+        },
+        {
+          "type": "paragraph",
+          "content": "Settings below are desktop specific."
+        },
+        {
+          "type": "checkbox",
+          "id": "display_on_desktop",
+          "label": "Display On Desktop",
+          "default": true
+        },
+        {
+          "type": "number",
+          "id": "desktop_margin_top",
+          "label": "Margin Top",
+          "info": "The value is in pixels",
+          "default": 0
+        },
+        {
+          "type": "number",
+          "id": "desktop_margin_right",
+          "label": "Margin Right",
+          "info": "The value is in pixels",
+          "default": 0
+        },
+        {
+          "type": "number",
+          "id": "desktop_margin_bottom",
+          "label": "Margin Bottom",
+          "info": "The value is in pixels",
+          "default": 0
+        },
+        {
+          "type": "number",
+          "id": "desktop_margin_left",
+          "label": "Margin Left",
+          "info": "The value is in pixels",
+          "default": 0
+        },
+        {
+          "type": "number",
+          "id": "desktop_padding_top",
+          "label": "Padding Top",
+          "info": "The value is in pixels",
+          "default": 0
+        },
+        {
+          "type": "number",
+          "id": "desktop_padding_right",
+          "label": "Padding Right",
+          "info": "The value is in pixels",
+          "default": 0
+        },
+        {
+          "type": "number",
+          "id": "desktop_padding_bottom",
+          "label": "Padding Bottom",
+          "info": "The value is in pixels",
+          "default": 0
+        },
+        {
+          "type": "number",
+          "id": "desktop_padding_left",
+          "label": "Padding Left",
+          "info": "The value is in pixels",
+          "default": 0
+        },
+        {
+          "type": "number",
+          "id": "desktop_font_size",
+          "label": "Font Size",
+          "info": "The value is in pixels",
+          "default": 16
+        },
+        {
+          "type": "number",
+          "id": "desktop_line_height",
+          "label": "Line Height",
+          "info": "The value is in pixels. Recommended line height value is 1.5 times the font size",
+          "default": 24
+        },
+        {
+          "type": "number",
+          "id": "desktop_letter_spacing",
+          "label": "Letter Spacing",
+          "info": "Recommended letter spacing value is 0px. Accepts negative value!",
+          "default": 0
+        },
+        {
+          "type": "select",
+          "id": "desktop_text_alignment",
+          "label": "Text Alignment",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "center",
+              "label": "Center"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ],
+          "default": "left"
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_hover_effect",
+          "label": "Enable Hover Effect",
+          "default": false
+        },
+        {
+          "type": "color",
+          "id": "hover_color",
+          "label": "Hover Color",
+          "default": "#000000"
+        }
+      ]
+    },
+    {
+      "type": "custom_image",
+      "name": "Custom Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "custom_image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "custom_image_alt",
+          "label": "Image Alt Text"
+        },
+        {
+          "type": "header",
+          "content": "Device Independent Settings"
+        },
+        {
+          "type": "paragraph",
+          "content": "Settings below are device independent."
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_image_animation_effect",
+          "label": "Enable Image Animation Effect",
+          "default": false
+        },
+        {
+          "type": "select",
+          "id": "image_animation_direction",
+          "label": "Image Animation Direction",
+          "options": [
+            {
+              "value": "ttb",
+              "label": "Top To Bottom"
+            },
+            {
+              "value": "rtl",
+              "label": "Right To Left"
+            },
+            {
+              "value": "btt",
+              "label": "Bottom To Top"
+            },
+            {
+              "value": "ltr",
+              "label": "Left To Right"
+            }
+          ],
+          "default": "ltr"
+        },
+        {
+          "type": "number",
+          "id": "image_animation_duration",
+          "label": "Image Animation Duration",
+          "info": "The value is in seconds. It defines how long an animation should take to complete one cycle",
+          "default": 1
+        },
+        {
+          "type": "select",
+          "id": "image_timing_function",
+          "label": "Image Timing Function",
+          "options": [
+            {
+              "value": "ease",
+              "label": "Ease"
+            },
+            {
+              "value": "ease-in",
+              "label": "Ease In"
+            },
+            {
+              "value": "ease-out",
+              "label": "Ease Out"
+            },
+            {
+              "value": "ease-in-out",
+              "label": "Ease In Out"
+            },
+            {
+              "value": "linear",
+              "label": "Linear"
+            }
+          ],
+          "default": "ease"
+        },
+        {
+          "type": "number",
+          "id": "image_animation_delay",
+          "label": "Image Animation Delay",
+          "info": "The value is in seconds. It specifies a delay for the start of an animation",
+          "default": 0
+        },
+        {
+          "type": "header",
+          "content": "Mobile Specific Settings"
+        },
+        {
+          "type": "paragraph",
+          "content": "Settings below are mobile specific."
+        },
+        {
+          "type": "checkbox",
+          "id": "display_on_mobile",
+          "label": "Display On Mobile",
+          "default": true
+        },
+        {
+          "type": "number",
+          "id": "mobile_margin_top",
+          "label": "Margin Top",
+          "info": "The value is in pixels",
+          "default": 0
+        },
+        {
+          "type": "number",
+          "id": "mobile_margin_right",
+          "label": "Margin Right",
+          "info": "The value is in pixels",
+          "default": 0
+        },
+        {
+          "type": "number",
+          "id": "mobile_margin_bottom",
+          "label": "Margin Bottom",
+          "info": "The value is in pixels",
+          "default": 0
+        },
+        {
+          "type": "number",
+          "id": "mobile_margin_left",
+          "label": "Margin Left",
+          "info": "The value is in pixels",
+          "default": 0
+        },
+        {
+          "type": "number",
+          "id": "mobile_padding_top",
+          "label": "Padding Top",
+          "info": "The value is in pixels",
+          "default": 0
+        },
+        {
+          "type": "number",
+          "id": "mobile_padding_right",
+          "label": "Padding Right",
+          "info": "The value is in pixels",
+          "default": 0
+        },
+        {
+          "type": "number",
+          "id": "mobile_padding_bottom",
+          "label": "Padding Bottom",
+          "info": "The value is in pixels",
+          "default": 0
+        },
+        {
+          "type": "number",
+          "id": "mobile_padding_left",
+          "label": "Padding Left",
+          "info": "The value is in pixels",
+          "default": 0
+        },
+        {
+          "type": "number",
+          "id": "mobile_image_width",
+          "label": "Image Width",
+          "info": "The value is in px",
+          "default": 100
+        },
+        {
+          "type": "number",
+          "id": "mobile_image_height",
+          "label": "Image Height",
+          "info": "The value is in px",
+          "default": 30
+        },
+        {
+          "type": "header",
+          "content": "Desktop Specific Settings"
+        },
+        {
+          "type": "paragraph",
+          "content": "Settings below are desktop specific."
+        },
+        {
+          "type": "checkbox",
+          "id": "display_on_desktop",
+          "label": "Display On Desktop",
+          "default": true
+        },
+        {
+          "type": "number",
+          "id": "desktop_margin_top",
+          "label": "Margin Top",
+          "info": "The value is in pixels",
+          "default": 0
+        },
+        {
+          "type": "number",
+          "id": "desktop_margin_right",
+          "label": "Margin Right",
+          "info": "The value is in pixels",
+          "default": 0
+        },
+        {
+          "type": "number",
+          "id": "desktop_margin_bottom",
+          "label": "Margin Bottom",
+          "info": "The value is in pixels",
+          "default": 0
+        },
+        {
+          "type": "number",
+          "id": "desktop_margin_left",
+          "label": "Margin Left",
+          "info": "The value is in pixels",
+          "default": 0
+        },
+        {
+          "type": "number",
+          "id": "desktop_padding_top",
+          "label": "Padding Top",
+          "info": "The value is in pixels",
+          "default": 0
+        },
+        {
+          "type": "number",
+          "id": "desktop_padding_right",
+          "label": "Padding Right",
+          "info": "The value is in pixels",
+          "default": 0
+        },
+        {
+          "type": "number",
+          "id": "desktop_padding_bottom",
+          "label": "Padding Bottom",
+          "info": "The value is in pixels",
+          "default": 0
+        },
+        {
+          "type": "number",
+          "id": "desktop_padding_left",
+          "label": "Padding Left",
+          "info": "The value is in pixels",
+          "default": 0
+        },
+        {
+          "type": "number",
+          "id": "desktop_image_width",
+          "label": "Image Width",
+          "info": "The value is in px",
+          "default": 150
+        },
+        {
+          "type": "number",
+          "id": "desktop_image_height",
+          "label": "Image Height",
+          "info": "The value is in px",
+          "default": 50
+        }
+      ]
+    },
+    {
+      "type": "custom_collapsible_row",
+      "name": "Custom Collapsible Row",
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "heading",
+          "default": "Collapsible row",
+          "info": "Include a heading that explains the content",
+          "label": "Heading"
+        },
+        {
+          "type": "color",
+          "id": "heading_color",
+          "label": "Heading Color",
+          "default": "#000000"
+        },
+        {
+          "type": "richtext",
+          "id": "richtext_content",
+          "label": "Row content"
+        },
+        {
+          "type": "page",
+          "id": "content",
+          "label": "Row content from page"
+        },
+        {
+          "type": "checkbox",
+          "id": "expanded_by_default",
+          "label": "Expanded Row By Default",
+          "default": false
+        },
+        {
+          "type": "url",
+          "id": "readmore_link",
+          "label": "Read More Link"
+        }
+      ]
+    },
+    {
+      "type": "custom_mobile_blockquote",
+      "name": "Custom Mobile Blockquote",
+      "settings": [
+        {
+          "type": "color_background",
+          "id": "background_color",
+          "label": "Background Color",
+          "default": "linear-gradient(#ffffff, #ffffff)"
+        },
+        {
+          "type": "image_picker",
+          "id": "background_image",
+          "label": "Background Image"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "default": "<p>Text goes here</p>",
+          "label": "Text"
+        },
+        {
+          "type": "number",
+          "id": "border_radius",
+          "label": "Border Radius",
+          "default": 0,
+          "info": "The value is in pixels."
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "header",
+      "content": "Device Independent Settings"
+    },
+    {
+      "type": "paragraph",
+      "content": "Settings below are device independent."
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background Image"
+    },
+    {
+      "type": "header",
+      "content": "Mobile Specific Settings"
+    },
+    {
+      "type": "paragraph",
+      "content": "Settings below are mobile specific."
+    },
+    {
+      "type": "checkbox",
+      "id": "display_on_mobile",
+      "label": "Display On Mobile",
+      "default": true
+    },
+    {
+      "type": "number",
+      "id": "mobile_margin_top",
+      "label": "Margin Top",
+      "info": "The value is in pixels",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "mobile_margin_right",
+      "label": "Margin Right",
+      "info": "The value is in pixels",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "mobile_margin_bottom",
+      "label": "Margin Bottom",
+      "info": "The value is in pixels",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "mobile_margin_left",
+      "label": "Margin Left",
+      "info": "The value is in pixels",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "mobile_padding_top",
+      "label": "Padding Top",
+      "info": "The value is in pixels",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "mobile_padding_right",
+      "label": "Padding Right",
+      "info": "The value is in pixels",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "mobile_padding_bottom",
+      "label": "Padding Bottom",
+      "info": "The value is in pixels",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "mobile_padding_left",
+      "label": "Padding Left",
+      "info": "The value is in pixels",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Desktop Specific Settings"
+    },
+    {
+      "type": "paragraph",
+      "content": "Settings below are desktop specific."
+    },
+    {
+      "type": "checkbox",
+      "id": "display_on_desktop",
+      "label": "Display On Desktop",
+      "default": true
+    },
+    {
+      "type": "number",
+      "id": "desktop_margin_top",
+      "label": "Margin Top",
+      "info": "The value is in pixels",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "desktop_margin_right",
+      "label": "Margin Right",
+      "info": "The value is in pixels",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "desktop_margin_bottom",
+      "label": "Margin Bottom",
+      "info": "The value is in pixels",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "desktop_margin_left",
+      "label": "Margin Left",
+      "info": "The value is in pixels",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "desktop_padding_top",
+      "label": "Padding Top",
+      "info": "The value is in pixels",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "desktop_padding_right",
+      "label": "Padding Right",
+      "info": "The value is in pixels",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "desktop_padding_bottom",
+      "label": "Padding Bottom",
+      "info": "The value is in pixels",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "desktop_padding_left",
+      "label": "Padding Left",
+      "info": "The value is in pixels",
+      "default": 0
+    }
+  ],
+  "presets": [
+    {
+      "name": "Centered Content Container"
+    }
+  ]
+}
+{% endschema %}

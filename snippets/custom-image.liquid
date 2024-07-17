@@ -1,0 +1,118 @@
+<style>
+  @keyframes customSlideInForImage-{{ block.id }} {
+    {%- if block.settings.image_animation_direction == 'ttb' -%}
+      0% {
+        top: -100%;
+        opacity: 0;
+      }
+      100% {
+        top: 0;
+        opacity: 1;
+      }
+    {%- elsif block.settings.image_animation_direction  == 'rtl' -%}
+      0% {
+        right: -100%;
+        opacity: 0;
+      }
+      100% {
+        right: 0;
+        opacity: 1;
+      }
+    {%- elsif block.settings.image_animation_direction  == 'btt' -%}
+      0% {
+        bottom: -100%;
+        opacity: 0;
+      }
+      100% {
+        bottom: 0;
+        opacity: 1;
+      }
+    {%- else -%}
+      0% {
+        left: -100%;
+        opacity: 0;
+      }
+      100% {
+        left: 0;
+        opacity: 1;
+      }
+    {%- endif -%}
+  }
+
+  .custom-image__container-{{ block.id }} {
+    {%- if block.settings.display_on_mobile == false -%}
+      display: none;
+    {%- else -%}
+      display: block;
+    {%- endif -%}
+
+    margin-top: {{- block.settings.mobile_margin_top -}}px;
+    margin-right: {{- block.settings.mobile_margin_right -}}px;
+    margin-bottom: {{- block.settings.mobile_margin_bottom -}}px;
+    margin-left: {{- block.settings.mobile_margin_left -}}px;
+    padding-top: {{- block.settings.mobile_padding_top -}}px;
+    padding-right: {{- block.settings.mobile_padding_right -}}px;
+    padding-bottom: {{- block.settings.mobile_padding_bottom -}}px;
+    padding-left: {{- block.settings.mobile_padding_left -}}px;
+  }
+
+  .custom-image__container-{{ block.id }} > img {
+    {%- if block.settings.enable_image_animation_effect == true -%}
+      position: relative;
+      {%- if block.settings.image_animation_direction == 'ttb' -%}
+        top: -100%;
+      {%- elsif block.settings.image_animation_direction == 'rtl' -%}
+        right: -100%;
+      {%- elsif block.settings.image_animation_direction == 'btt' -%}
+        bottom: -100%;
+      {%- else -%}
+        left: -100%;
+      {%- endif -%}
+      opacity: 0;
+      animation-name: customSlideInForImage-{{ block.id }};
+      animation-duration: {{ block.settings.image_animation_duration }}s;
+      animation-timing-function: {{ block.settings.image_timing_function }};
+      animation-delay: {{ block.settings.image_animation_delay }}s;
+      animation-iteration-count: 1;
+      animation-direction: normal;
+      animation-fill-mode: forwards;
+      animation-play-state: running;
+    {%- endif -%}
+    width: {{ block.settings.mobile_image_width }}px;
+    height: {{ block.settings.mobile_image_height }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .custom-image__container-{{ block.id }} {
+      {%- if block.settings.display_on_desktop == false -%}
+        display: none;
+      {%- else -%}
+        display: block;
+      {%- endif -%}
+
+      margin-top: {{- block.settings.desktop_margin_top -}}px;
+      margin-right: {{- block.settings.desktop_margin_right -}}px;
+      margin-bottom: {{- block.settings.desktop_margin_bottom -}}px;
+      margin-left: {{- block.settings.desktop_margin_left -}}px;
+      padding-top: {{- block.settings.desktop_padding_top -}}px;
+      padding-right: {{- block.settings.desktop_padding_right -}}px;
+      padding-bottom: {{- block.settings.desktop_padding_bottom -}}px;
+      padding-left: {{- block.settings.desktop_padding_left -}}px;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    .custom-image__container-{{ block.id }} > img {
+      width: {{ block.settings.desktop_image_width }}px;
+      height: {{ block.settings.desktop_image_height }}px;
+    }
+  }
+</style>
+
+<img
+  src="{{ block.settings.custom_image | image_url }}"
+  height=""
+  width=""
+  loading="lazy"
+  alt="{{ block.settings.custom_image_alt }}"
+>

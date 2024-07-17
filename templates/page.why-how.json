@@ -1,0 +1,281 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "image_with_text_gEFy8i": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_rhiiGq": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Svi benefiti superzdravih gljiva u manje od 10 sekundi.<\/strong>",
+            "heading_size": "h2"
+          }
+        }
+      },
+      "block_order": [
+        "heading_rhiiGq"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/1_46243550-8d11-47a7-badb-e7d3022895b3.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "scheme-1",
+        "color_scheme": "scheme-9cf1bf13-13e5-4ab8-8c2f-6b0845a51f26",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_with_text_XG8FXd": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_CqwMn6": {
+          "type": "heading",
+          "settings": {
+            "heading": "Proces",
+            "heading_size": "h1"
+          }
+        },
+        "text_BhxdjW": {
+          "type": "text",
+          "settings": {
+            "text": "<h5>Većina važnih bioaktivnih sastojaka koji nas zanimaju je zarobljena među staničnim stijenkama gljive (izgrađeni su od hitina – jednog od najtvrđih prirodnih materijala koji je usto i neprobavljiv).<\/h5><h5><br\/>Iz tog razloga jednostavno mljevenje gljiva u prah nije dovoljno. Kako bi otključali puni potencijal, hitin mora biti razgrađen u procesu dvojne ekstrakcije, primjenom topline i alkohola.<\/h5>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_CqwMn6",
+        "text_BhxdjW"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/2_6207dd04-5220-4f8d-ab4a-30aad4441d85.png",
+        "height": "medium",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "scheme-70020ab2-fc0e-4b5e-881b-4864cf084227",
+        "color_scheme": "scheme-fc678a87-d37b-40ef-9fe6-6f0871e0524d",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "multicolumn_nGh4Lm": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_MRNhxM": {
+          "type": "column",
+          "settings": {
+            "title": "1. Berba",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_pHHLYF": {
+          "type": "column",
+          "settings": {
+            "title": "2. Sušenje",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_m4yCaJ": {
+          "type": "column",
+          "settings": {
+            "title": "3. Mljevenje",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_YfwxMH": {
+          "type": "column",
+          "settings": {
+            "title": "4. Dvojna ekstrakcija",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_ayfgTC": {
+          "type": "column",
+          "settings": {
+            "title": "5. Sušenje",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_aUWAVL": {
+          "type": "column",
+          "settings": {
+            "title": "6. Miješanje",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_MRNhxM",
+        "column_pHHLYF",
+        "column_m4yCaJ",
+        "column_YfwxMH",
+        "column_ayfgTC",
+        "column_aUWAVL"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "third",
+        "image_ratio": "square",
+        "columns_desktop": 3,
+        "column_alignment": "center",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "scheme-fc678a87-d37b-40ef-9fe6-6f0871e0524d",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "multirow_L9BGGj": {
+      "type": "multirow",
+      "blocks": {
+        "row_D6hmPK": {
+          "type": "row",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/3_cb15599d-bae3-4f37-beda-3c76f994f790.png",
+            "caption": "",
+            "heading": "<strong>7. Konačni proizvod<\/strong>",
+            "text": "<h5>Mushroom Cups koristi najmoderniji postupak ekstrakcije, gdje ekstraktiramo sve bioaktivne komponente na nižim temperaturama na taj način štiteći sve vitamine i minerale osjetljive na visoke temperature koje se koriste u komercijalnim procesima.<br\/>Samo odstranjivanjem sve vode i hitinske ovojnice možemo dobiti visoko-kvalitetni ekstrakt s maksimalnim biološkim potencijalom, spreman za konzumaciju.<\/h5>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "row_LemRdU": {
+          "type": "row",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/4_9cd757a7-f587-4771-913d-9d8a4c2c666d.png",
+            "caption": "",
+            "heading": "<strong>Koje smo gljive odabrali i zašto?<\/strong>",
+            "text": "<h5>Fokusirali smo se na vrste visoke u nutrijentima ključnim za konverziju hrane u energiju na staničnoj razini te nutrijentima koji pozitivno utječu na imunitet i kognitivnu funkciju.<br\/>Obzirom na kriterije, četiri gljive su očiti favoriti, s puno više benefita od ovih osnovnih.<br\/>Fantastična četvorka:<\/h5>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "row_YYeMEx": {
+          "type": "row",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/5_97ab38eb-f467-4db1-a95a-f8365a7afd92.png",
+            "caption": "",
+            "heading": "<strong>Lisičarke<\/strong>",
+            "text": "<h5>Mjesto iz kojeg smo krenuli, naša domovina Hrvatska, ima prekrasne netaknute šume (Lika i Gorski kotar) prepune divljih lisičarki - gljiva nježnog okusa, fantastične arome i još boljeg kemijskog sastava.<br\/>Vrlo su bogate vitaminom D i imaju jednu od najviših prirodnih koncentracija vitamina B, koji igraju temeljnu ulogu u pretvaranju hrane u energiju, proizvodnji serotonina i pokretanju enzima koji sudjeluju u sintezi neurotransmitera i rastu živaca. Stoga su lisičke neizostavni sastojak svakog MushroomCup-a i pomoći će vam da započnete svoj dan. SAZNAJTE VIŠE →<\/h5>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "row_XXXyzi": {
+          "type": "row",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/6_147707d8-622b-4d2b-b328-5624adde2306.png",
+            "caption": "",
+            "heading": "<strong>Lavlja griva<\/strong>",
+            "text": "<h5>Lavlja griva fascinantna je gljiva koja s razlogom sve više raste u popularnosti. Sadrži dvije specifične smjese hericerine i erinacine koji nisu pronađeni u nijednoj drugoj vrsti na planetu. Korist koja iz njih proizlazi je nevjerojatna:<br\/><br\/>• Lavlja griva podržava funkciju mozga i ima mogućnost obnove živčanih stanica<br\/>• Smanjuje depresiju i anksioznost<br\/>Ovdje saznajte više o ovoj fascinantnoj gljivi. SAZNAJTE VIŠE -<br\/><\/h5>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "row_NNwcba": {
+          "type": "row",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/7.png",
+            "caption": "",
+            "heading": "<strong>Chaga<\/strong>",
+            "text": "<h5>Chaga je koktel nevjerojatno kompleksnih dobrotvornih fitonutrijenata. Ova gljiva ima impresivno visoke ORAC ocjene, koji ukazuju na sposobnost hrane u zaštiti od preranog starenja, starosnog gubitka pamćenja i neutralizacije štete učinjene slobodnim radikalima.<br\/><br\/>Uz to, izrazito tamna boja Chage je uzrokovana jako visokim razinama melanina – glavnog pigmenta u našoj koži odgovornog za njeno zdravlje i ljepotu. &lt;1P&gt; Naša Chaga ima preko 30% više beta-glukana zaslužnih za pojačavanje imuniteta i često je propisana kao lijek ljudima s alergijama i infekcijama. SAZNAJTE VIŠE -<\/h5>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "row_k6bbyF": {
+          "type": "row",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/8.png",
+            "caption": "",
+            "heading": "<strong>Cordyceps<\/strong>",
+            "text": "<h5>Cordyceps je antička Tibetanska gljiva poznata po svom efektu pojačanja libida 😉 (provjerite priču kako je otkrivena). Ima jedinstven kemijski sastav koji poboljšava performanse. Znanstveno je dokazana njegova moć kod povećanja proizvodnje energije na staničnoj razini i rasta oksigeniziranosti te je često korišten od strane sportaša kao prirodni suplement.<br\/><br\/>Cordyceps je dvosmjerni modulator – ujedno pojačava responzivnost imunološkog sustava i smanjuje njegov odgovor u nepoželjnim upalnim reakcijama, što naš imunitet čini pametnijim i prilagodljivim na ugroze. Ovdje možete saznati više o pozitivnom učinku Cordyceps-a na respiratornu funkciju, izdržljivost i izdržljivost. SAZNAJTE VIŠE -<\/h5>",
+            "button_label": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "row_D6hmPK",
+        "row_LemRdU",
+        "row_YYeMEx",
+        "row_XXXyzi",
+        "row_NNwcba",
+        "row_k6bbyF"
+      ],
+      "settings": {
+        "image_height": "medium",
+        "desktop_image_width": "small",
+        "heading_size": "h2",
+        "text_style": "body",
+        "button_style": "secondary",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "image_layout": "alternate-left",
+        "section_color_scheme": "scheme-9cf1bf13-13e5-4ab8-8c2f-6b0845a51f26",
+        "row_color_scheme": "scheme-fc678a87-d37b-40ef-9fe6-6f0871e0524d",
+        "mobile_content_alignment": "left",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "image_banner_7g4EyH": {
+      "type": "image-banner",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/banner_img_performance.png",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "image_with_text_gEFy8i",
+    "image_with_text_XG8FXd",
+    "multicolumn_nGh4Lm",
+    "multirow_L9BGGj",
+    "image_banner_7g4EyH"
+  ]
+}

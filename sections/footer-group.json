@@ -1,0 +1,71 @@
+{
+  "name": "t:sections.footer.name",
+  "type": "footer",
+  "sections": {
+    "custom_liquid_CjU48V": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<div>\n<p style=\"text-align:center;padding-left:20px;padding-right:20px\">Testimonials showed on our page are the expression of our customers' experience with our products. There's no guarantee of specific results and the results may vary.<\/p>\n<\/div>",
+        "color_scheme": "scheme-9cf1bf13-13e5-4ab8-8c2f-6b0845a51f26",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "link_list_cUKqdQ": {
+          "type": "link_list",
+          "settings": {
+            "heading": "<strong>PRODUCTS<\/strong>",
+            "menu": "footer"
+          }
+        },
+        "link_list_VKwiGJ": {
+          "type": "link_list",
+          "settings": {
+            "heading": "ORDERS",
+            "menu": "orders3"
+          }
+        },
+        "link_list_tDG6md": {
+          "type": "link_list",
+          "settings": {
+            "heading": "INQUIRIES",
+            "menu": "inquiries"
+          }
+        },
+        "brand_information_BDRxAp": {
+          "type": "brand_information",
+          "settings": {
+            "show_social": false
+          }
+        }
+      },
+      "block_order": [
+        "link_list_cUKqdQ",
+        "link_list_VKwiGJ",
+        "link_list_tDG6md",
+        "brand_information_BDRxAp"
+      ],
+      "settings": {
+        "color_scheme": "scheme-9cf1bf13-13e5-4ab8-8c2f-6b0845a51f26",
+        "newsletter_enable": true,
+        "newsletter_heading": "Subscribe to our emails",
+        "enable_follow_on_shop": true,
+        "show_social": true,
+        "enable_country_selector": true,
+        "enable_language_selector": true,
+        "payment_enable": true,
+        "show_policy": false,
+        "margin_top": 0,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "custom_liquid_CjU48V",
+    "footer"
+  ]
+}

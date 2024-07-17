@@ -1,0 +1,252 @@
+<section
+  class="section-{{ section.id }}-padding"
+  data-section="{{ section.id }}"
+>
+  {% style %}
+    .section-{{ section.id }}-padding {
+        {%- if section.settings.background_color != blank and section.settings.background_image == blank -%}
+          background-color: {{ section.settings.background_color }};
+        {%- endif -%}
+
+        {%- if section.settings.background_image != blank and section.settings.background_color == blank -%}
+          background: url('{{ section.settings.background_image | image_url }}') center/cover no-repeat border-box padding-box scroll;
+        {%- endif -%}
+
+        {%- if section.settings.background_color != blank and section.settings.background_image != blank -%}
+          background: {{ section.settings.background_color }} url('{{ section.settings.background_image | image_url }}') center/cover no-repeat border-box padding-box scroll;
+        {%- endif -%}
+    }
+
+    .section-{{ section.id }}-padding .product-features__container {
+      display: flex;
+      flex-flow: column wrap;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .section-{{ section.id }}-padding .product-features__container .product-feature__item {
+        width: 90%;
+        max-width: 90%;
+        padding: 1rem;
+        background-color: #0081B3;
+        border-radius: 3rem;
+        padding: 1rem;
+        margin-bottom: 1rem;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+    }
+
+    @media screen and (min-width: 480px) {
+        .section-{{ section.id }}-padding .product-features__container .product-feature__item {
+            width: 80%;
+            max-width: 80%;
+        }
+    }
+
+    @media screen and (min-width: 768px) {
+        .section-{{ section.id }}-padding .product-features__container .product-feature__item {
+            width: 50%;
+            max-width: 50%;
+        }
+    }
+
+    .section-{{ section.id }}-padding .product-features__container .product-feature__item .product-feature__img {
+        width: 17%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .section-{{ section.id }}-padding .product-features__container .product-feature__item .product-feature__text {
+        width: 85%;
+        padding-left: 1rem;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    @media screen and (min-width: 480px) {
+      .section-{{ section.id }}-padding .product-features__container .product-feature__item .product-feature__img {
+          width: 15%;
+      }
+      .section-{{ section.id }}-padding .product-features__container .product-feature__item .product-feature__text {
+        width: 85%;
+        padding-left: 0;
+      }
+    }
+
+    @media screen and (min-width: 768px) {
+      .section-{{ section.id }}-padding .product-features__container .product-feature__item .product-feature__img {
+          width: 15%;
+      }
+      .section-{{ section.id }}-padding .product-features__container .product-feature__item .product-feature__text {
+        width: 85%;
+      }
+    }
+
+    @media screen and (min-width: 1440px) {
+      .section-{{ section.id }}-padding .product-features__container .product-feature__item {
+          width: 30%;
+          max-width: 30%;
+      }
+      .section-{{ section.id }}-padding .product-features__container .product-feature__item .product-feature__img {
+          width: 10%;
+      }
+      .section-{{ section.id }}-padding .product-features__container .product-feature__item .product-feature__text {
+        width: 89%;
+      }
+    }
+
+    .section-{{ section.id }}-padding .product-features__container .product-feature__item .product-feature__text p {
+      font-size: 1.2rem;
+      color: white;
+      margin: 0;
+      font-family: Nunito;
+      text-align: left;
+    }
+
+    @media screen and (min-width: 480px) {
+      .section-{{ section.id }}-padding .product-features__container .product-feature__item .product-feature__text p {
+        font-size: 1.5rem;
+      }
+    }
+  {% endstyle %}
+
+  <section class="product-features__container">
+      {% for block in section.blocks %}
+        {%- case block.type -%}
+          {%- when "feature_item" -%}
+            <div class="product-feature__item">
+              <div class="product-feature__img">
+                <img
+                  src="{{ block.settings.image | image_url }}"
+                  height=""
+                  width=""
+                  loading="lazy"
+                  alt="{{ block.settings.image_alt }}"
+                >
+              </div>
+              <div class="product-feature__text">
+                <p>
+                  {{- block.settings.text -}}
+                </p>
+              </div>
+            </div>
+        {% endcase %}
+      {% endfor %}
+  </section>
+</section>
+
+{% schema %}
+{
+  "name": "Product features",
+  "tag": "section",
+  "class": "section",
+  "blocks": [
+    {
+      "type": "@app"
+    },
+    {
+      "type": "feature_item",
+      "name": "Feature item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "image_alt",
+          "label": "Image Alt Text"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "text",
+          "default": "Lorem <i>ipsum</i> <b>dolor</b>",
+          "label": "Text"
+        },
+        {
+          "type": "header",
+          "content": "Device Independent Settings"
+        },
+        {
+          "type": "paragraph",
+          "content": "Settings below are device independent."
+        },
+        {
+          "type": "header",
+          "content": "Mobile Specific Settings"
+        },
+        {
+          "type": "paragraph",
+          "content": "Settings below are mobile specific."
+        },
+        {
+          "type": "number",
+          "id": "mobile_image_width",
+          "label": "Image Width",
+          "info": "The value is in px",
+          "default": 100
+        },
+        {
+          "type": "number",
+          "id": "mobile_image_height",
+          "label": "Image Height",
+          "info": "The value is in px",
+          "default": 30
+        },
+        {
+          "type": "header",
+          "content": "Desktop Specific Settings"
+        },
+        {
+          "type": "paragraph",
+          "content": "Settings below are desktop specific."
+        },
+        {
+          "type": "number",
+          "id": "desktop_image_width",
+          "label": "Image Width",
+          "info": "The value is in px",
+          "default": 150
+        },
+        {
+          "type": "number",
+          "id": "desktop_image_height",
+          "label": "Image Height",
+          "info": "The value is in px",
+          "default": 50
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "header",
+      "content": "Device Independent Settings"
+    },
+    {
+      "type": "paragraph",
+      "content": "Settings below are device independent."
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background Image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product features"
+    }
+  ]
+}
+{% endschema %}
