@@ -31,8 +31,10 @@
         "text_nCjT4E"
       ],
       "custom_css": [
-        "h2 {margin-top: 0px; margin-bottom: 10px; font-family: Nunito; font-weight: 900; font-size: 50px; line-height: 52px; color: rgb(56, 34, 15);}",
-        "p {font-family: Nunito; font-weight: 600; font-size: 18px; line-height: 28px; color: rgb(56, 34, 15); margin-top: 0px; margin-bottom: 0px;}"
+        "h2 {margin: 0px; font-family: Nunito; font-weight: 900; line-height: 52px; color: rgb(56, 34, 15);}",
+        "p {font-family: Nunito; font-weight: 600; font-size: 18px; line-height: 28px; color: rgb(56, 34, 15); margin: 0px;}",
+        "div.rich-text__text {margin-top: 1rem;}",
+        "@media screen and (min-width: 1440px) {h2 {font-size: 50px; margin-bottom: 10px; } div.rich-text__text {margin-top: 2rem; }}"
       ],
       "settings": {
         "desktop_content_position": "center",
@@ -84,7 +86,7 @@
       ],
       "custom_css": [
         "ul.grid {justify-content: center; align-items: center;}",
-        "li.multicolumn-list__item {max-width: 25rem;}",
+        "li.multicolumn-list__item {width: 15rem;}",
         "div.multicolumn-card.content-container {max-width: 25rem; background: rgb(var(--color-background)); padding: 25px; border-style: solid; border-color: rgb(131, 80, 46); border-width: 1px; border-radius: 20px;}",
         "div.multicolumn-card__info {padding: 0;}",
         "div.multicolumn-card-spacing {padding-top: 0;}",
