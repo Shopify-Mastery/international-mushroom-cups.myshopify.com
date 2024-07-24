@@ -97,9 +97,9 @@
         </span>
       {%- endunless -%}
       <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.sale_price' | t }}</span>
-      <span class="price-item price-item--sale price-item--last">
-        {{ money_price }}
-      </span>
+      {% comment %} <span class="price-item price-item--sale price-item--last"> {% endcomment %}
+      {% comment %}   {{ money_price }} {% endcomment %}
+      {% comment %} </span> {% endcomment %}
       <span class="price-item price-item--sale price-item--last">
         {{ price | money_with_currency }}
       </span>
